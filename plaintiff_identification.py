@@ -24,7 +24,7 @@ import redivis
 # ID the medical debt plaintiffs based on string identification alone, with
 # excluded terms
 def string_based_id(input_df, plaintiff_col_name, included_terms, excluded_terms):
-	temp_df = input_df
+	temp_df = input_df.copy()
 	def string_id_tool(input_string, included_terms, excluded_terms):
 		if type(input_string) != str:
 			return False
@@ -35,7 +35,7 @@ def string_based_id(input_df, plaintiff_col_name, included_terms, excluded_terms
 # ID Based on Fuzzy Regex
 # Base threshold: 0.95
 def regex_based_id(input_df, plaintiff_col_name, included_terms, excluded_terms):
-	temp_df = input_df
+	temp_df = input_df.copy()
 	def string_regex_tool(input_string, included_terms, excluded_terms):
 		if type(input_string) != str:
 			return False
